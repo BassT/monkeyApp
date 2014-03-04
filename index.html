@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+  <title>Monkey problem</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/custom-template.css" rel="stylesheet">
+
+  <!-- Just for debugging purposes. Don't actually copy this line! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+
+    <body>
+
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Monkey problems</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#sf">Straightforward</a></li>
+              <li><a href="#fo">First-order</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+
+      <!-- =============================
+            Straighforward monkey problem 
+           ============================= -->
+
+      <a name="sf"></a>
+      <div class="container custom-template">
+        <div class="page-header">
+          <h1>Straightforward monkey problem</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>This is a straighforward monkey. He randomly types characters. Stupid.</p>
+                <p><button type="button" class="btn btn-success" id="sf-start-button">
+                  <span class="glyphicon glyphicon-play"></span> Start typing
+                </button>
+                <button type="button" class="btn btn-danger" id="sf-stop-button">
+                  <span class="glyphicon glyphicon-stop"></span> Stop typing
+                </button></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Text typed by a monkey</div>
+                  <div class="panel-body" id="sf-monkey-text" style="word-wrap:break-word;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">Results</div>
+              <div class="panel-body">
+                <div id="sf-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================
+              First-order monkey problem 
+             ============================= -->
+
+        <a name="fo"></a>
+        <div class="page-header">
+          <h1>First-order monkey problem</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>This is a first-order monkey problem. You can feed the monkey a text and she or he will type characters according to their occurence in the text you gave him. The default text is Act III of Hamlet.</p>
+                <p><button type="button" class="btn btn-success" id="fo-start-button">
+                  <span class="glyphicon glyphicon-play"></span> Start typing
+                </button>
+                <button type="button" class="btn btn-danger" id="fo-stop-button">
+                  <span class="glyphicon glyphicon-stop"></span> Stop typing
+                </button></p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Text input
+                  </div>
+                  <div class="panel-body">
+                    <p>Title: <input class="form-control" type="text" id="fo-text-title"></p>
+                    <p>Text: <textarea class="form-control" rows="3" id="fo-text-input-text"></textarea></p>
+                    <p>
+                      <button class="btn btn-default" id="fo-save-text-input">Save</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Text typed by a monkey</div>
+                  <div class="panel-body" id="fo-monkey-text" style="word-wrap:break-word;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">Results</div>
+              <div class="panel-body">
+                <div id="fo-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================
+              Second-order monkey problem 
+             ============================= -->
+
+        <a name="so"></a>
+        <div class="page-header">
+          <h1>Second-order monkey</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-7">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>This is a second-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous character he typed.</p>
+             <p>
+             <button type="button" class="btn btn-success" id="so-start-button">
+                <span class="glyphicon glyphicon-play"></span> Start typing
+              </button>
+              <button type="button" class="btn btn-danger" id="so-stop-button">
+                <span class="glyphicon glyphicon-stop"></span> Stop typing
+              </button>
+             </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Text input
+                  </div>
+                  <div class="panel-body">
+                    <p>Title: <input class="form-control" type="text" id="so-text-title"></p>
+                    <p>Text: <textarea class="form-control" rows="3" id="so-text-input-text" maxlength="20000"></textarea></p>
+                    <p>
+                      <button class="btn btn-default" id="so-save-text-input">Save</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Text typed by a monkey</div>
+                  <div class="panel-body" id="so-monkey-text" style="word-wrap:break-word;"></div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <a name="so-results"></a>
+              <div class="panel-heading">Results</div>
+              <div class="panel-body">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Character <span id="selected-char">a</span></button>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>   
+                  <ul class="dropdown-menu" role="menu" id="prev-char-dropdown"></ul>
+                </div>
+                &nbsp;&nbsp;followed by:
+                <div id="so-chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =============================
+              Third-order monkey problem 
+             ============================= -->
+
+        <div class="page-header">
+          <h1>Third-order monkey
+        </div>
+        <div class="row">
+          <div class="col-sm-7">
+            <p>This is a third-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous two character he typed. This monkey has a significant chance of typing actual words and is therefore evaluated against the 5000 most common English words.</p>
+            <p>
+            <button type="button" class="btn btn-success" id="to-start-button">
+               <span class="glyphicon glyphicon-play"></span> Start typing
+             </button>
+             <button type="button" class="btn btn-danger" id="to-stop-button">
+               <span class="glyphicon glyphicon-stop"></span> Stop typing
+             </button>
+             <div class="panel panel-default">
+               <div class="panel-heading">
+                 Text input
+               </div>
+               <div class="panel-body">
+                 <p>Title: <input class="form-control" type="text" id="to-text-title"></p>
+                 <p>Text: <textarea class="form-control" rows="3" id="to-text-input-text"></textarea></p>
+                 <p>
+                   <button class="btn btn-default" id="to-save-text-input">Save</button>
+                 </p>
+               </div>
+             </div>
+             <div class="panel panel-default">
+               <div class="panel-heading">Text typed by a monkey</div>
+               <div class="panel-body" id="to-monkey-text" style="word-wrap:break-word;"></div>
+             </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="panel panel-default">
+              <div class="panel-heading">Results</div>
+              <div class="panel-body">
+                <p>Typed actual English words: <span id="to-word-ratio">0/0</span></p>
+                <p>Current word: <span id="to-current-word"></span></p>
+                <p>Last correct word: <span id="to-last-word"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/monkey.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+  </body>
+  </html>

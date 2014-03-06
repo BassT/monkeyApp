@@ -9,7 +9,7 @@
   <meta name="author" content="">
   <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-  <title>Monkey problem</title>
+  <title>Linguistics with JavaScript</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -38,24 +38,50 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Monkey problems</a>
+            <a class="navbar-brand" href="#">Linguistics with JavaScript</a>
           </div>
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#sf">Straightforward</a></li>
               <li><a href="#fo">First-order</a></li>
+              <li><a href="#so">Second-order</a></li>
+              <li><a href="#to">Third-order</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
 
-      <!-- =============================
-            Straighforward monkey problem 
-           ============================= -->
+	  
+
+      
 
       <a name="sf"></a>
       <div class="container custom-template">
-        <div class="page-header">
+  	  <!-- =============================
+              Jumbo 
+       	 ============================= -->
+
+      	<div class="jumbotron">
+      		<h1>Linguistics with JavaScript</h1>
+      		<p>
+      			This webpage contains several applications related to computational linguistics.
+      			<ol>
+      				<li>Typing monkeys with increasing intelligence</li>
+      					<ul id="jumbo-nav-list">
+      						<li><a href="#sf">Straightforward</a></li>
+      						<li><a href="#fo">First-order</a></li>
+      						<li><a href="#so">Second-order</a></li>
+      						<li><a href="#to">Third-order</a></li>
+      					</ul>
+      			</ol>
+      		</p>
+      	</div>
+
+      	<!-- =============================
+            Straighforward monkey problem 
+           ============================= -->
+
+        <div class="page-header" id="sf">
           <h1>Straightforward monkey problem</h1>
         </div>
         <div class="row">
@@ -93,16 +119,14 @@
         <!-- =============================
               First-order monkey problem 
              ============================= -->
-
-        <a name="fo"></a>
-        <div class="page-header">
+        <div class="page-header" id="fo">
           <h1>First-order monkey problem</h1>
         </div>
         <div class="row">
           <div class="col-sm-7">
             <div class="row">
               <div class="col-sm-12">
-                <p>This is a first-order monkey problem. You can feed the monkey a text and she or he will type characters according to their occurence in the text you gave him. The default text is Act III of Hamlet.</p>
+                <p>This is a first-order monkey problem. You can feed the monkey a text and she or he will type characters according to their occurence in the text you gave him. The default text is Act III of Hamlet. You can get other texts from <a href="http://www.gutenberg.org/">Project Gutenberg</a>.</p>
                 <p><button type="button" class="btn btn-success" id="fo-start-button">
                   <span class="glyphicon glyphicon-play"></span> Start typing
                 </button>
@@ -119,7 +143,7 @@
                   </div>
                   <div class="panel-body">
                     <p>Title: <input class="form-control" type="text" id="fo-text-title"></p>
-                    <p>Text: <textarea class="form-control" rows="3" id="fo-text-input-text"></textarea></p>
+                    <p>Text: (max 20000 characters)<textarea class="form-control" rows="3" id="fo-text-input-text" maxinput="20000"></textarea></p>
                     <p>
                       <button class="btn btn-default" id="fo-save-text-input">Save</button>
                     </p>
@@ -150,15 +174,14 @@
               Second-order monkey problem 
              ============================= -->
 
-        <a name="so"></a>
-        <div class="page-header">
+        <div class="page-header" id="so">
           <h1>Second-order monkey</h1>
         </div>
         <div class="row">
           <div class="col-sm-7">
             <div class="row">
               <div class="col-sm-12">
-                <p>This is a second-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous character he typed.</p>
+                <p>This is a second-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous character he typed. You can get texts from <a href="http://www.gutenberg.org/">Project Gutenberg</a>.</p>
              <p>
              <button type="button" class="btn btn-success" id="so-start-button">
                 <span class="glyphicon glyphicon-play"></span> Start typing
@@ -177,7 +200,7 @@
                   </div>
                   <div class="panel-body">
                     <p>Title: <input class="form-control" type="text" id="so-text-title"></p>
-                    <p>Text: <textarea class="form-control" rows="3" id="so-text-input-text" maxlength="20000"></textarea></p>
+                    <p>Text: (max 20000 characters)<textarea class="form-control" rows="3" id="so-text-input-text" maxlength="20000"></textarea></p>
                     <p>
                       <button class="btn btn-default" id="so-save-text-input">Save</button>
                     </p>
@@ -215,12 +238,12 @@
               Third-order monkey problem 
              ============================= -->
 
-        <div class="page-header">
+        <div class="page-header" id="to">
           <h1>Third-order monkey
         </div>
         <div class="row">
           <div class="col-sm-7">
-            <p>This is a third-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous two character he typed. This monkey has a significant chance of typing actual words and is therefore evaluated against the 5000 most common English words.</p>
+            <p>This is a third-order monkey. It can read a text and will type characters according to their frequency in the input text and will also take into account the previous two character he typed. This monkey has a significant chance of typing actual words and is therefore evaluated against the Ubuntu dictionary of English words. You can get texts from <a href="http://www.gutenberg.org/">Project Gutenberg</a>.</p>
             <p>
             <button type="button" class="btn btn-success" id="to-start-button">
                <span class="glyphicon glyphicon-play"></span> Start typing
@@ -234,7 +257,7 @@
                </div>
                <div class="panel-body">
                  <p>Title: <input class="form-control" type="text" id="to-text-title"></p>
-                 <p>Text: <textarea class="form-control" rows="3" id="to-text-input-text"></textarea></p>
+                 <p>Text: (max 20000 characters)<textarea class="form-control" rows="3" id="to-text-input-text" maxinput="20000"></textarea></p>
                  <p>
                    <button class="btn btn-default" id="to-save-text-input">Save</button>
                  </p>
@@ -265,6 +288,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/monkey.js"></script>
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="js/linguistics.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
   </body>
   </html>
